@@ -67,6 +67,8 @@ The Streamlit dashboard supports:
 - Robustness testing with noise injection
 - Apple Watch ECG workflow demonstration
 
+---
+
 ## Installation
 
 Clone the repository:
@@ -93,7 +95,37 @@ pip install -r requirements.txt
 
 ## Running the Project
 
-Run the Streamlit dashboard:
+Run ECG preprocessing before training:
+
+```bash
+python preprocessing.py
+```
+
+Train the baseline ECG CNN model:
+
+```bash
+python train.py
+```
+
+(Optional) Train the compact Small CNN model:
+
+```bash
+python train_smaller_ecg_cnn.py
+```
+
+(Optional) Run robustness testing:
+
+```bash
+python robustness.py
+```
+
+(Optional) Run dynamic INT8 quantization and optimization:
+
+```bash
+python optimize.py
+```
+
+Launch the Streamlit ECG AI dashboard:
 
 ```bash
 streamlit run app.py
@@ -135,3 +167,32 @@ CardioEdge/
 ├── watch_ecg.csv                   # Converted ECG CSV signal
 ├── watch_ecg.png                   # ECG waveform visualization
 ```
+
+---
+
+## Technologies Used
+
+- Python
+- PyTorch
+- Streamlit
+- NumPy
+- Matplotlib
+- WFDB
+- Scikit-learn
+
+---
+
+## Future Work
+
+- Real-time Apple Watch ECG streaming
+- Swift/Xcode native deployment
+- Quantization-aware training
+- Transformer-based ECG models
+- Improved robustness and false positive reduction
+
+---
+
+## Author
+
+Chakradhar Punur  
+Rutgers University – MS in Computer Science
